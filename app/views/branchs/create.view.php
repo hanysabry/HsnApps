@@ -76,7 +76,7 @@
 
         <div class="input_wrapper n50 border">
             <label<?= $this->labelFloat('Barcode') ?>><?= $text_barcode ?></label>
-            <input   type="text" name="Barcode" maxlength="15" value="<?= $this->showValue('Barcode') ?>">
+            <input   type="text" name="Barcode" maxlength="50" value="<?= $this->showValue('Barcode') ?>">
         </div>
 
 
