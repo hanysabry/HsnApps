@@ -29,6 +29,10 @@ $_['text_Twitter'] = 'التويتر' ;
 $_['text_snap'] = 'اسناب' ;
 $_['text_Instgram'] = 'انستجرام' ;
 
+$_['text_barcode'] = 'الباركود' ;
+
+
+
 
 $_['text_table_control'] = 'التحكم';
 $_['text_table_control_delete_confirm'] = 'هل تود حذف الفرع ؟';

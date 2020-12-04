@@ -39,6 +39,10 @@ class BranchsModel extends AbstractModel
         'Address1'          => self::DATA_TYPE_STR,
         'Email1'             => self::DATA_TYPE_STR,
         'PhoneNumber1'       => self::DATA_TYPE_STR,
+        'Facebook'       => self::DATA_TYPE_STR,
+        'Twitter'       => self::DATA_TYPE_STR,
+        'snap'       => self::DATA_TYPE_STR,
+        'Barcode'       => self::DATA_TYPE_STR,
 
     );
 

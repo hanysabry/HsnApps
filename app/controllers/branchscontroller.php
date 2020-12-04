@@ -23,13 +23,17 @@ class BranchsController extends AbstractController
     private $_createActionRoles =
 
         [
-            'BranchesId'    => 'req||int',
-            'NameBranch'    => 'req||alphanum|between(3,40)',
+           'NameBranch'    => 'req||alphanum|between(3,40)',
             'CompanyId'    => 'req||int',
             'UserId'         =>'int',
             'Email1'         => 'email',
             'PhoneNumber1'   => 'alphanum|max(15)',
             'Address1'       => 'alphanum|max(50)',
+            'Facebook'       => 'alphanum|max(50)',
+            'Twitter'       => 'alphanum|max(50)',
+            'snap'       => 'alphanum|max(50)',
+            'Barcode'       => 'alphanum|max(50)',
+
 
         ];
 
@@ -55,24 +59,18 @@ class BranchsController extends AbstractController
         $this->language->load('branchs.messages');
         $this->language->load('validation.errors');
         $this->_data['branchs'] = BranchsModel::getAll();
+        $this->_data['Company'] = CompanyModel::getAll();
         $this->_data['users'] = UserModel::getAll();
+
 
         if(isset($_POST['submit']) && $this->isValid($this->_createActionRoles,$_POST)) {
             $branchs = new BranchsModel();
-            $branchs->PhoneNumber1 = $this->filterString($_POST['PhoneNumber1']);
-            $branchs->NameCompany= $this->filterString($_POST['NameCompany']);
+            $branchs->NameBranch = $this->filterString($_POST['NameBranch']);
+            $branchs->CompanyId = $this->filterString($_POST['CompanyId']);
             $branchs->UserId = $this->filterInt($_POST['UserId']);
             $branchs->Address1 = $this->filterString($_POST['Address1']);
-            $branchs->Address2 = $this->filterString($_POST['Address2']);
-            $branchs->Address3 = $this->filterString($_POST['Address3']);
             $branchs->Email1 = $this->filterString($_POST['Email1']);
-            $branchs->Email2 = $this->filterString($_POST['Email2']);
-            $branchs->Email3 = $this->filterString($_POST['Email3']);
             $branchs->PhoneNumber1 = $this->filterString($_POST['PhoneNumber1']);
-            $branchs->PhoneNumber2 = $this->filterString($_POST['PhoneNumber2']);
-            $branchs->PhoneNumber3 = $this->filterString($_POST['PhoneNumber3']);
-            $branchs->SEGEL = $this->filterString($_POST['SEGEL']);
-            $branchs->VatNo = $this->filterString($_POST['VatNo']);
             $branchs->Facebook = $this->filterString($_POST['Facebook']);
             $branchs->Twitter = $this->filterString($_POST['Twitter']);
             $branchs->Instgram = $this->filterString($_POST['Instgram']);
